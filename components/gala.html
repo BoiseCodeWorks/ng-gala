@@ -1,0 +1,38 @@
+<div>
+<button ng-click="$ctrl.showMe = !$ctrl.showMe">:D CLICK ME</button>
+  <form ng-submit="$ctrl.addToGala($ctrl.art)" ng-if="$ctrl.showMe">
+    <input type="text" ng-model="$ctrl.art.name" placeholder="Artist Name">
+    <input type="text" ng-model="$ctrl.art.title" placeholder="Title Name" >
+    <input type="text" ng-model="$ctrl.art.url" placeholder="Url">
+    <button type="submit">Submit</button>
+
+  </form>
+
+  
+ <div class="card1">
+
+    <h1>{{$ctrl.art.name}}</h1>
+
+   <h3>{{$ctrl.art.title}}</h3>
+
+    <img ng-src="{{$ctrl.art.url}}">
+
+    
+
+  </div>
+
+
+  <div class="card" ng-repeat="artwork in $ctrl.gala">
+
+    <h1>{{artwork.name}}</h1>
+
+   <h3>{{artwork.title}}</h3>
+
+    <img ng-src="{{artwork.url}}">
+
+    
+    <button ng-click="$ctrl.removeArt($index)">X</button>
+  </div>
+
+
+</div>
